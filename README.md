@@ -1,3 +1,4 @@
+--uwu
 local Library = {}
 
 local TweenService = game:GetService("TweenService")
@@ -546,7 +547,7 @@ function Library:CreateWindow(config)
             BorderSizePixel = 0,
             Size = UDim2.new(1, 0, 0, 40),
             Font = Enum.Font.GothamSemibold,
-            Text = "      " .. tabName,
+            Text = "",
             TextColor3 = Color3.fromRGB(160, 160, 160),
             TextSize = 13,
             TextXAlignment = Enum.TextXAlignment.Left,
@@ -559,18 +560,25 @@ function Library:CreateWindow(config)
             Parent = TabButton
         })
         
-        create("UIPadding", {
-            Parent = TabButton,
-            PaddingLeft = UDim.new(0, 15)
-        })
-        
         local TabIcon = create("ImageLabel", {
             Parent = TabButton,
             BackgroundTransparency = 1,
-            Position = UDim2.new(0, 12, 0.5, -8),
+            Position = UDim2.new(0, 15, 0.5, -8),
             Size = UDim2.new(0, 16, 0, 16),
             Image = icon,
             ImageColor3 = Color3.fromRGB(160, 160, 160)
+        })
+        
+        local TabLabel = create("TextLabel", {
+            Parent = TabButton,
+            BackgroundTransparency = 1,
+            Position = UDim2.new(0, 40, 0, 0),
+            Size = UDim2.new(1, -40, 1, 0),
+            Font = Enum.Font.GothamSemibold,
+            Text = tabName,
+            TextColor3 = Color3.fromRGB(160, 160, 160),
+            TextSize = 13,
+            TextXAlignment = Enum.TextXAlignment.Left
         })
         
         local TabIndicator = create("Frame", {
